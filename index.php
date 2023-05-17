@@ -20,33 +20,53 @@ include __DIR__ . "/db.php";
 </head>
 <body>
 
-    <h1 class="text-center ">Computers List</h1>
-<div class="cards d-flex">
+    <header class="bg-dark py-3">
+        <nav class="nav nav-tabs nav-stacked container">
+            <a class="nav-link active" href="#">Active link</a>
+            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link disabled" href="#">Disabled link</a>
+        </nav>
+    </header>
 
-    <div class="container">
-        <?php foreach ($computers as $computer) {?>
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title"><?=$computer->brand?> <?=$computer->model?> </h5>
-                    <h6 class="card-subtitle mb-2 text-muted "> <?=$computer->getType()?> </h6>
-                    <ul class="list-group">
-                        <li class="list-group-item">Motherboard <?=$computer->motherboard?></li>
-                        <li class="list-group-item">CPU <?=$computer->CPU?></li>
-                        <li class="list-group-item">GPU <?=$computer->GPU?></li>
-                        <li class="list-group-item">Memory <?=$computer->memory?></li>
-                        <li class="list-group-item">
-                                <?= $computer->getType() === "Desktop" ? "keyboard " : "Battery " ?><?= $computer->getType() === "Desktop" ? $computer->keyboard : $computer->battery ?>
-                            </li>
-                            <li class="list-group-item">
-                                <?= $computer->getType() === "Desktop" ? "monitor" : "TouchPad " ?><?= $computer->getType() === "Desktop" ? $computer->monitor : $computer->touchpad ?>
-                            </li>
-                    </ul>
-                </div>
+    <main>
+        <div class="p-5 mb-4 bg-light rounded-3">
+            <div class="container py-5">
+                <h1 class="display-5 fw-bold">Custom jumbotron</h1>
+                <p class="col-md-8 fs-4">Using a series of utilities, you can create this jumbotron, just like the one in previous versions of Bootstrap. Check out the examples below for how you can remix and restyle it to your liking.</p>
+                <button class="btn btn-primary btn-lg" type="button">Example button</button>
             </div>
-        <?php }?>
+        </div>
 
-    </div>
-</div>
+        <h1 class="text-center my-3">Computers List</h1>
+        <div class="container">
+            <div class="row row-cols-3 row-cols-xs-1">
+
+                <?php foreach ($computers as $computer) {?>
+                    <div class="card shadow p-3 mb-2">
+                        <div class="card-body">
+                            <img src="<?= $computer->image ?>" alt="">
+
+                            <h5 class="card-title mt-3"><?=$computer->brand?> - <?=$computer->model?> </h5>
+                            <h6 class="card-subtitle mb-2 text-muted "> <?=$computer->getType()?> </h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">Motherboard <?=$computer->motherboard?></li>
+                                <li class="list-group-item">CPU <?=$computer->CPU?></li>
+                                <li class="list-group-item">GPU <?=$computer->GPU?></li>
+                                <li class="list-group-item">Memory <?=$computer->memory?></li>
+                                <li class="list-group-item">
+                                    <?=$computer->getType() === "Desktop" ? "keyboard " : "Battery "?><?=$computer->getType() === "Desktop" ? $computer->keyboard : $computer->battery?>
+                                </li>
+                                <li class="list-group-item">
+                                    <?=$computer->getType() === "Desktop" ? "monitor" : "TouchPad "?><?=$computer->getType() === "Desktop" ? $computer->monitor : $computer->touchpad?>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php }?>
+            </div>
+        </div>
+    
+    </main>
 
 </body>
 </html>

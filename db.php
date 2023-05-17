@@ -2,18 +2,22 @@
 
 $computers=[
 
-    new Desktop(
+    new Desktop (
         'Apple',
         'MacBook Pro',
+        'https://picsum.photos/300/200',
         'motherboard', 
         'Intel Core i7', 
         'NVIDIA', 
         '1TB SSD',
+        'Keyboard',
+        'Monitor',
     ),
     
     new Laptop(
         'Dell',
         'XPS Tower',
+        'https://picsum.photos/300/200',
         'ASUS Prime Z590-A',
         'Intel Core i7',
         'NVIDIA ',
@@ -25,6 +29,7 @@ $computers=[
     new Desktop(
         'Apple',
         'MacBook Pro',
+        'https://picsum.photos/300/200',
         'motherboard', 
         'Intel Core i7', 
         'NVIDIA', 
@@ -34,6 +39,7 @@ $computers=[
     new Laptop(
         'Dell',
         'XPS Tower',
+        'https://picsum.photos/300/200',
         'ASUS Prime Z590-A',
         'Intel Core i7',
         'NVIDIA ',
