@@ -48,21 +48,21 @@ include __DIR__ . "/db.php";
 
                             <h5 class="card-title mt-3"><?=$computer->brand?> - <?=$computer->model?> </h5>
                             <h6 class="card-subtitle mb-2 text-muted "> <?=$computer->getType()?> </h6>
+                        
                             <ul class="list-group">
-                                <li class="list-group-item">Motherboard <?=$computer->motherboard?></li>
-                                <li class="list-group-item">CPU <?=$computer->CPU?></li>
-                                <li class="list-group-item">GPU <?=$computer->GPU?></li>
-                                <li class="list-group-item">Memory <?=$computer->memory?></li>
+                            
                                 <li class="list-group-item">
-                                    <?=$computer->getType() === "Desktop" ? "keyboard " : "Battery "?><?=$computer->getType() === "Desktop" ? $computer->keyboard : $computer->battery?>
+                                    <?=$computer->getType() === "Desktop" ? "keyboard " : "Battery "?><?=$computer->getType() === "Desktop" ? $computer->keyboard : $computer->battery?> 
                                 </li>
                                 <li class="list-group-item">
                                     <?=$computer->getType() === "Desktop" ? "monitor" : "TouchPad "?><?=$computer->getType() === "Desktop" ? $computer->monitor : $computer->touchpad?>
                                 </li>
+                                <li class="list-group-item"><?= $computer->getPortability() ?> </li>
                             </ul>
                         </div>
                     </div>
                 <?php }?>
+                
             </div>
         </div>
     
